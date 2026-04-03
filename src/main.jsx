@@ -15,6 +15,7 @@ import NotFound from './Component/NotFound.jsx';
 import SignIn from './Component/SignIn.jsx';
 import Profile from './Component/Profile.jsx';
 import Products from './Component/Products.jsx';
+import ProductDetails from './Component/ProductDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,12 @@ const router = createBrowserRouter([
       { path: 'laptops', element: <Laptops /> },
       { path: 'profile', element: <Profile /> },
       { path: 'products', element: <Products /> },
+      {
+        path: 'products/:productId',
+        loader: ({ params }) =>
+          fetch(`https://dummyjson.com/products/${params.productId}`),
+        element: <ProductDetails />
+      },
       { path: '*', element: <NotFound /> },
     ],
   },

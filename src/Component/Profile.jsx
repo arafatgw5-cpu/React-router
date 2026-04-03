@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-
+import image from "../assets/IMG_20251116_180356-01.jpeg"
 
 const Profile = () => {
   const { state } = useLocation();
@@ -12,7 +12,7 @@ const Profile = () => {
 
         {/* Profile Image */}
         <img
-          src={state?.photo || "https://i.pravatar.cc/150"}
+          src={state?.photo || image}
           alt="Profile"
           className="profile-img"
         />
